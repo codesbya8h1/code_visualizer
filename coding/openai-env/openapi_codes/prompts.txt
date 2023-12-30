@@ -1,0 +1,27 @@
+1. export api key
+2. install openai
+
+-m = model
+-p = prompt
+-M = Max token
+-t = temperature 0 to 1, 0.9 being more creative, 0.1 being precise
+-n = number of responses
+
+Models:
+1. babbage
+2. ada
+-------------------------------------------------------------
+completions prompts:
+--------------------
+openai api completions.create -m babbage -p "Steve Jobs is a"
+
+openai api completions.create -m ada -p "Steve Jobs is a"
+
+openai api completions.create -m ada -p "Donald Trump is a" -M 50 -t 0.8 -n 2
+
+
+image creation prompts:
+----------------------
+openai api images.generate -p "create an image of a husky dog jumping in snow"
+
+openai api images.generate -p "create an image of a husky dog jumping in snow" -n 2
