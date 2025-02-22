@@ -17,11 +17,19 @@ def greet(name):
 def capitalize_words(text):
     return text.title()
 
+def another_random_function():
+    pass
+
+def random_function():
+    another_random_function()
+
 def count_vowels(string):
     vowels = 'aeiou'
+    random_function()
     return sum(1 for char in string.lower() if char in vowels)
 
-def main():
+
+def not_main():
     user_name = "alice smith"
     greeting = greet(user_name)
     capitalized_name = capitalize_words(user_name)
@@ -32,4 +40,4 @@ def main():
     print(f"Number of vowels in the name: {vowel_count}")
 
 if __name__ == "__main__":
-    main()
+    not_main()

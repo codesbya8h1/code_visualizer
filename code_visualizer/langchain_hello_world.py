@@ -14,6 +14,3 @@ messages = [
 
 response = model.invoke(messages)
 print(response.content)
-
-# for token in model.stream(messages):
-#     print(token.content)
