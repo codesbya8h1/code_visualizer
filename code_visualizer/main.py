@@ -48,8 +48,6 @@ def main():
         execution_graph = get_project_execution_flow(folder)
     
     entry_point = find_starting_point(execution_graph)
-    print(entry_point)
-    print(execution_graph)
     build_ascii_graph(execution_graph, entry_point)
 
 if __name__ == "__main__":
