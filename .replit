@@ -1,4 +1,4 @@
-modules = ["python-3.12"]
+modules = ["nodejs-20", "python-3.12"]
 
 [nix]
 channel = "stable-24_05"
@@ -13,3 +13,11 @@ author = 36904878
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python code_visualizer/api.py"
+
+[[ports]]
+localPort = 5173
+externalPort = 5173
+
+[[ports]]
+localPort = 8000
+externalPort = 80

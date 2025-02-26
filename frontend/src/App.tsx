@@ -1,72 +1,35 @@
-
-import React, { useState } from 'react';
-import axios from 'axios';
-import './App.css';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-  const [files, setFiles] = useState<FileList | null>(null);
-  const [graphs, setGraphs] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!files) return;
-
-    setLoading(true);
-    setError(null);
-    
-    const formData = new FormData();
-    
-    if (files.length === 1) {
-      formData.append('file', files[0]);
-      try {
-        const response = await axios.post('http://localhost:8000/analyze/file', formData);
-        setGraphs([response.data.graph]);
-      } catch (err) {
-        setError('Failed to analyze file');
-      }
-    } else {
-      Array.from(files).forEach(file => {
-        formData.append('files', file);
-      });
-      try {
-        const response = await axios.post('http://localhost:8000/analyze/folder', formData);
-        setGraphs([response.data.graph]);
-      } catch (err) {
-        setError('Failed to analyze folder');
-      }
-    }
-    setLoading(false);
-  };
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <h1>Code Visualizer</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="upload-box">
-          <input
-            type="file"
-            multiple
-            onChange={(e) => setFiles(e.target.files)}
-            accept=".py"
-          />
-          <p>Drop Python files or folder here</p>
-        </div>
-        <button type="submit" disabled={!files || loading}>
-          {loading ? 'Analyzing...' : 'Analyze Code'}
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
         </button>
-      </form>
-      
-      {error && <div className="error">{error}</div>}
-      
-      {graphs.map((graph, index) => (
-        <pre key={index} className="graph">
-          {graph}
-        </pre>
-      ))}
-    </div>
-  );
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App
