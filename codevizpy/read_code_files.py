@@ -10,4 +10,5 @@ def read_code_files(repo_path):
                 file_path = os.path.join(root, file)
                 with open(file_path, 'r') as f:
                     code_contents[file] = f.read()
+    print("Code contents:", code_contents)
     return code_contents

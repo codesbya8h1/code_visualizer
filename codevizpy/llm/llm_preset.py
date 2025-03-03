@@ -1,17 +1,17 @@
+import os
 from langchain.llms import OpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
+
 
 # Initialize the LLM
-llm = OpenAI(api_key="your-api-key-here")
-
-# Create a prompt template
-prompt = PromptTemplate(input_variables=["topic"],
-                        template="Write a short paragraph about {topic}.")
+openai_api_key = os.environ['OPENAI_API_KEY']
+openai_llm = OpenAI(client=None,
+                    openai_api_key=openai_api_key,
+                    model_name="GPT-3.5-turbo")
 
 # Create an LLM chain
-chain = LLMChain(llm=llm, prompt=prompt)
+# chain = LLMChain(llm=openai_llm, prompt=prompt)
+# LLMChain(llm=OpenAI(), prompt=prompt)
 
 # Run the chain
-result = chain.run("artificial intelligence")
-print(result)
+# result = chain.run("artificial intelligence")
+# print(result)

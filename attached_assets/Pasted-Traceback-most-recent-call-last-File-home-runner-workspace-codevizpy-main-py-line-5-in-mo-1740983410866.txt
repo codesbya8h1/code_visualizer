@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/home/runner/workspace/codevizpy/main.py", line 5, in <module>
+    from llm_generate_code_graph import generate_graph_from_code
+  File "/home/runner/workspace/codevizpy/llm_generate_code_graph.py", line 1, in <module>
+    from llm.llm_preset import openai_llm
+  File "/home/runner/workspace/codevizpy/llm/llm_preset.py", line 2, in <module>
+    from langchain.llms import OpenAI
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/__init__.py", line 8, in <module>
+    from langchain.agents import MRKLChain, ReActChain, SelfAskWithSearchChain
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/agents/__init__.py", line 2, in <module>
+    from langchain.agents.agent import Agent
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/agents/agent.py", line 10, in <module>
+    from langchain.chains.base import Chain
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/chains/__init__.py", line 2, in <module>
+    from langchain.chains.conversation.base import ConversationChain
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/chains/conversation/base.py", line 7, in <module>
+    from langchain.chains.conversation.memory import ConversationBufferMemory
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/chains/conversation/memory.py", line 7, in <module>
+    from langchain.chains.conversation.prompt import SUMMARY_PROMPT
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/chains/conversation/prompt.py", line 2, in <module>
+    from langchain.prompts.prompt import PromptTemplate
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/prompts/__init__.py", line 2, in <module>
+    from langchain.prompts.base import BasePromptTemplate
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/prompts/base.py", line 35, in <module>
+    class BasePromptTemplate(BaseModel, ABC):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/langchain/prompts/base.py", line 41, in BasePromptTemplate
+    @root_validator()
+     ^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/pydantic/deprecated/class_validators.py", line 240, in root_validator
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: If you use `@root_validator` with pre=False (the default) you MUST specify `skip_on_failure=True`. Note that `@root_validator` is deprecated and should be replaced with `@model_validator`.
+
+For further information visit https://errors.pydantic.dev/2.10/u/root-validator-pre-skip
