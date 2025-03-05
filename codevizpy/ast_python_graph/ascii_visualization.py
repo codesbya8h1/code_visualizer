@@ -38,3 +38,4 @@ def build_ascii_graph(execution_flow, entry_points):
         print("Execution Graph for : ", entry_point)
         print(execution_graph.get_graph().draw_ascii())
         print()
+        Image(execution_graph.get_graph().draw_mermaid_png())

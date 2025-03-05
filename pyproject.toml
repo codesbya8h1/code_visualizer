@@ -1,0 +1,21 @@
+[project]
+name = "code-visualizer"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12, <4.0"
+dependencies = [
+    "langchain (>=0.3.20,<0.4.0)",
+    "streamlit (>=1.43.0,<2.0.0)",
+    "streamlit-flow-component (>=1.6.1,<2.0.0)",
+    "streamlit-file-browser (>=3.2.22,<4.0.0)",
+    "wxpython (>=4.2.2,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
